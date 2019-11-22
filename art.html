@@ -1,0 +1,335 @@
+<!Doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>IVAN KONDRATIEV</title>
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=cyrillic" rel="stylesheet">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153094778-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-153094778-1');
+                const closeModal = () => {
+	                const modal = document.getElementById('modal');
+	                modal.style.display = 'none';
+                    document.getElementById('picture-fon').style.display="none";
+                    document.body.classList.remove('no-scroll');
+                };
+
+                const openModal = evt => {
+                    var scrollbody = document.body.scrollTop; 
+                    const modal = document.getElementById('modal');
+                    const fade = document.getElementById('picture-fon');
+                    const scrollBody = document.documentElement.scrollTop;
+                    modal.style.marginTop=scrollbody+'px';
+	                document.getElementById('modalpicture').src=`./pictures/${evt.id}.jpg`;
+	                modal.style.display = 'block';
+                    document.getElementById('picture-fon').style.display="block";
+                    fade.style.display = "block";
+                    fade.style.marginTop = scrollBody + 'px';
+                    modal.style.marginTop = scrollBody + 'px';
+                    document.body.classList.add('no-scroll');
+                    var text_picture = evt.id;
+                    if (text_picture == '201911pastel2'){
+                        document.getElementById('info-picture').innerHTML = "Этюд «Берег реки». Бумага, сухая пастель. РАЗМЕР октябрь 2019 г.,";
+                    };
+                    if (text_picture == '201910popugai'){
+                        document.getElementById('info-picture').innerHTML = "Попугай. Холст, акрил, 60 х 40, октябрь 2019 г.";
+                    };
+                    if (text_picture == '201910train'){
+                        document.getElementById('info-picture').innerHTML = "Осень в Москве. Холст на картоне, акрил. РАЗМЕР сентябрь 2019 г.";
+                    };
+                    };
+            </script>
+        <style>
+            body {
+                margin:0;
+                background-color:white;
+                
+            }
+            .no-scroll{
+                overflow: hidden;
+            }
+            .top-name {
+                height:10vh;
+                width:25vw;
+                position: relative;
+            }
+            .link-top-name {
+                color:#61398B;
+                text-decoration-line:none;   
+                font-size: 30px;
+                position: absolute;
+                top: 50%; 
+                transform: translate(0, -50%);
+                font-family: 'Comfortaa', cursive;
+                cursor: default;
+            }
+                .main-page {
+                    height: 6vh;
+                    width:6vh;
+                    display:grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    grid-row-gap: 1vh;
+                    grid-column-gap: 1vh;
+                    position: absolute;
+                    left:50%;
+                    top:50%;
+                    transform: translate(-50%,-50%);
+                    cursor: pointer; 
+                }
+                .red{
+                background-color: #DD5143;
+                border-radius:3px;
+                }
+                .green{
+                background-color: #44763C;
+                border-radius:3px;
+                }   
+                .yellow{
+                background-color: #FFCC00;
+                border-radius:3px;
+                }
+                .violet{
+                background-color: #61398B;
+                border-radius:3px;
+                }
+                .top-menu {
+                    width:40vw  ;
+                    height:10vh;
+                    display:grid;
+                    grid-template-rows:10vh;
+                    grid-template-columns:8vh 25vw;
+                    grid-column-gap:1vw;
+                }
+                .main {
+                    position: relative;
+                }
+                .art{
+                    margin-top: 5vh;
+                    height: 65vh;
+                    margin-left: 5vw;
+                    width: 90vw;
+                    display: block;
+
+                }
+            
+                .gallery{
+                    display:grid;
+                    grid-template-rows: 13vw 13vw 13vw 13vw 13vw 13vw 13vw 13vw ;
+                    grid-row-gap: 2vw;
+                    grid-template-columns: 13vw 13vw 13vw 13vw 13vw 13vw ;
+                    grid-column-gap: 2vw;
+                }
+                .photo-art{
+                    background-color: gainsboro;
+                    border-radius:20px;
+                }
+                .picture{
+                    width:100%;
+                    height:100%;
+                    object-fit: cover;
+                    border-radius: 20px;
+                    cursor: pointer;
+                }
+                .modal{
+                    z-index:1000;   
+                    display: none;
+                    position: absolute;
+                    margin-left:10vw;
+                    width:80vw;
+                    height:80vh;
+                    }
+                    .modalpicture {
+                        margin-top: 5 vh;
+                        width:80vw;
+                        height:80vh;
+                        object-fit:contain;
+                        border-radius:20px;
+                        }
+                    .picture-fon {
+                        position: absolute;
+                        display:none;
+                        z-index:900;
+                        background:rgba(0, 0, 0, 0.7);
+                        width:100vw;
+                        height:100vh;
+                        top:0;
+                        left:0;
+                    }
+                    .p-text-picture{
+                        color: whitesmoke;
+                        font-size: 30px;
+                    }
+                    .photo-artgod{
+                        background-color: gainsboro;
+                        border-radius:20px;
+                        position: relative;
+                        }
+                    .text-god{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-family: 'Comfortaa', cursive;
+                        text-decoration-line: none;
+                        font-size: 32px;
+                        color: #61398B;
+                    }
+                    .opisanie{
+                        margin-left: 5vw;
+                        width: 90vw;
+                    }
+                    @media screen and (max-width: 600px){
+                    .art{
+                        margin-top: 0vh;    
+                    }
+                    .gallery{
+                    grid-template-columns: 28vw 28vw 28vw;
+                    grid-column-gap: 3vw;
+                    grid-template-rows: 28vw 28vw 28vw 28vw 28vw 28vw 28vw 28vw 28vw 28vw 28vw 28vw 28vw 28vw 28vw;
+                    }
+                .modalpicture{
+                    margin-top:0;
+
+                }
+
+
+                }
+                @media screen and (min-width: 601px) and (max-width: 1200px){
+                    
+                    }
+        </style>
+    </head>
+    <body>
+        <div onclick="closeModal()" class="modal" id = "modal">
+            <img src="" id = "modalpicture" class="modalpicture" >
+            <div class="text-picture"><p class='p-text-picture' id = 'info-picture'></p></div>
+        </div>
+        <div class="picture-fon" id="picture-fon"></div>
+        <div class="top-menu">
+            <div class="main">
+                <div onclick="javascript:document.location.href=''" class="main-page">
+                    <div class="red"></div>
+                    <div class="green"></div>
+                    <div class="yellow"></div>
+                    <div class="violet"></div>
+                </div>
+            </div>
+            <div class="top-name"><a class="link-top-name" href="">Живопись</a></div>    
+        </div>
+        <div class='opisanie'>
+            <p>©˙∆¥ƒ®ƒƒ®</p>
+        </div>
+        <div class="art"id="art">
+            <div class="gallery">
+                    <div class="photo-artgod">
+                        <a class="text-god">2019</a>
+                    </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201911pastel2.jpg" id = "201911pastel2" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201910popugai.jpg" id = "201910popugai" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201910train.jpg" id = "201910train" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/picture1.jpg" id = "picture1" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201910aeroport.jpg" id = "201910aeroport" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201810woman.jpg" id = "201810woman" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201902roses.jpg" id = "201902roses" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201905black.jpg" id = "201905black" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                    <img class="picture" src="./pictures/2019book.jpg" id = "2019book" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-artgod">
+                        <a class="text-god">2018</a>
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201710italy.jpg" id = "201710italy" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201906tolstoi.jpg" id = "201906tolstoi" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201806pushkin.jpg" id = "201806pushkin" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201808beacon.jpg" id = "201808beacon" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201805pegas.jpg" id = "201805pegas" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                    <img class="picture" src="./pictures/201804easter.jpg" id = "201804easter" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                    <img class="picture" src="./pictures/formentor201705.jpg" id = "formentor201705" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201701flowers.jpg" id = "201701flowers" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201809naturmort.jpg" id = "201809naturmort" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-artgod">
+                        <a class="text-god">2017</a>
+                </div>
+                <div class="photo-art">
+                    <img class="picture" src="./pictures/201712kremlin.jpg" id = "201712kremlin" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201710family.jpg" id = "201710family" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                    <img class="picture" src="./pictures/cats.jpg" id = "cats" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                        <img class="picture" src="./pictures/201701spanishgirl.jpg" id = "201701spanishgirl" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                    <img class="picture" src="./pictures/201604sunship.jpg" id = "201604sunship" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art">
+                    <img class="picture" src="./pictures/201705ship.jpg" id = "201705ship" onclick="openModal(this)" alt="">
+                </div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+                <div class="photo-art"></div>
+            </div>
+        </div>
+        <div class="projects"id="projects"></div>
+
+
+    </body>
+</html>
